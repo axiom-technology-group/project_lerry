@@ -27,8 +27,12 @@ Airbnb在网页上使用的是高德地图，经纬度和百度地图使用的�
 在chengdu_listing_complete.csv的基础上加入了：
 1. result: 百度地图API搜索经纬度返回的完整结果，类型为string，需要使用函数转化为dictionary。
 代码示例：
-Python: 
+Python:
+
+
 import ast
+
+
 data['list'] = data['result'].apply(lambda x: ast.literal_eval(x[26:]))
 2. address: 从result里面提取出来的完整地址，精确到门牌号。
 3. zipcode：邮政编码
@@ -49,5 +53,17 @@ data['list'] = data['result'].apply(lambda x: ast.literal_eval(x[26:]))
 
 ### 4. chengdu_listing_cluster.csv
 房源基本信息+ 百度地图API返回的美食POI信息+聚类结果
+百度地图美食POI分类：http://lbsyun.baidu.com/index.php?title=lbscloud/poitags
+以下对新增字段进行说明：
+1. xiaochi_total: 百度地图API圆形区域搜索，半径为5KM，表示半径5KM圆形内小吃快餐店的数量。后续字段的搜索半径均为5KM。【中式美食】
+2. zhongcanting_total: 中餐厅数量。【中式美食】
+3. waiguocanting_total: 外国餐厅数量。
+4. cake_total：蛋糕甜品店数量。
+5. coffee_total: 咖啡厅数量。
+6. tea_total：茶座数量。
+7. pub_total：酒吧数量。
+8. subway_total: 地铁站数量。
+
+
 
 
