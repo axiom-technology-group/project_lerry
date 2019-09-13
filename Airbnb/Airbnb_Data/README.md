@@ -81,6 +81,7 @@ data['list'] = data['result'].apply(lambda x: ast.literal_eval(x[26:]))
 2. sentiment_label: 评价情感倾向，取值为0~1，数字越大表示越积极。
 3. positive_probs: 评价为积极的概率，取值为0~1.
 4. negative_probs: 评价为消极的概率，取值为0~1.
+
 5&6，经纬度。
 
 ### 7. lianjia_chengdu_address.csv
@@ -90,6 +91,7 @@ data['list'] = data['result'].apply(lambda x: ast.literal_eval(x[26:]))
 3. areaDesc(m2): 面积区间，单位为平方米。
 4. priceDesc(yuan/m2)：价格区间，单位为元/平方米。
 5. roomCount：房间套数。
+
 6&7: 通过百度地图API返回的经纬度信息。
 
 
